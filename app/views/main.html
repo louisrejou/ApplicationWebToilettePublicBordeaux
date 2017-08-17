@@ -1,0 +1,15 @@
+<script type="/../text/javascript">
+  CUB.ready(function() {
+    CUB.init('Carte')
+    var statique = new CUB.Layer.Static('CoucheStatique', 'http://data.bordeaux-metropole.fr/wms?key=NBK5WG5MO7', ['TB_PARCR_P']);
+    new CUB.Layer.Background('Background', CUB.Layer.Background.layerType.OPENSTREETMAP);
+    var color = CUB.Color.fromRGB(255, 255, 255);
+    var dynamique = new CUB.Layer.Dynamic('CoucheDynamique', 'toilette.kml',{ selectable: true});
+  });
+</script>
+
+<div id="Carte" style="width: 512px; height:512px; border: 1px solid black"></div>
+<br/>
+<div>
+  <button class="btn btn-info" onclick="CUB.moveToPoint(new CUB.Position(1417626, 4189068));" type="submit">Recentré la carte</button>
+</div>
